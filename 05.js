@@ -7,7 +7,7 @@ var ext = process.argv[3];
 fs.readdir(dir, function(err, files) {
   if (err) throw err;
 
-  filtered = files.filter(function(file) {
+  var filtered = files.filter(function(file) {
     return path.extname(file).slice(1) === ext;
   }, ext);
   filtered.forEach(function(file) {
